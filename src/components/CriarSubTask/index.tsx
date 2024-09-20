@@ -14,14 +14,14 @@ const DivContainer = styled.div`
     transform: translate(-50%, -50%);
     width: 25em;
     height: 6.5em;
-    background-color: #f1dd67;
+    background-color: #77a593;
     border-radius: 0.4em;
     border: 1px solid black;
     z-index: 99;
 
     h2{
         font-size: 2em;
-        color: #2b1300;
+        color: #000000;
     }
 
     input{
@@ -37,6 +37,7 @@ const DivContainer = styled.div`
     button{
         width: 5em;
         height: 1.9em;
+        margin-bottom: 0.3em;
     }
 `
 const DivBackgroundColor = styled.div`
@@ -59,7 +60,15 @@ const CriarSubTask: React.FC = () => {
         <>
             <DivContainer>
                 <h2>Escreva a subtask</h2>
-                <input type="text" value={inputSubTask} onChange={(e) => setInputSubTask(e.target.value)} />
+                <input 
+                type="text" 
+                value={inputSubTask} 
+                onChange={(e) => setInputSubTask(e.target.value)} 
+                onKeyDown={(e) => {
+                    if(e.key === "Enter"){
+                        AdicionarSubTask({ id: Date.now(), titulo: inputSubTask, corSubTask: 1})
+                    }
+                }}/>
                 <button onClick={() => AdicionarSubTask({ id: Date.now(), titulo: inputSubTask, corSubTask: 1})}>Criar</button>
             </DivContainer>
         <DivBackgroundColor onClick={() => setPainelSubTask(!painelSubTask)}/>

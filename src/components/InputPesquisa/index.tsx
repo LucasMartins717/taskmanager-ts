@@ -11,15 +11,15 @@ const DivEstilo = styled.div`
     }
 `
 
-const InputFilter: React.FC = () => {
+const InputPesquisa: React.FC = () => {
 
     const {inputPesquisa, setInputPesquisa} = useTaskContext();
 
     return(
         <DivEstilo>
-            <input type="text" value={inputPesquisa} onChange={(e) => {setInputPesquisa(e.target.value)}}/>
+            <input type="text" value={inputPesquisa} onChange={(e) => {setInputPesquisa(e.target.value)}} placeholder="Pesquisa:"/>
         </DivEstilo>        
     )
 }
 
-export default InputFilter;
+export default InputPesquisa;

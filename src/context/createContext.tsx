@@ -67,7 +67,7 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setPainelSubTask(!painelSubTask);
         setInputSubTask('');
         localStorage.setItem('tasks', JSON.stringify(criarSubTask));
-    };
+    }
 
     const AbrirPainelTask = () => {
         setPainelTask(!painelTask);
@@ -121,8 +121,6 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setTasks(updateTasks);
         localStorage.setItem('tasks', JSON.stringify(updateTasks));
     }
-
-
 
 
     return (

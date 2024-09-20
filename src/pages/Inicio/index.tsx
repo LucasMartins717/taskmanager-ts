@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Cabecalho from "../../components/Cabecalho";
-import InputFilter from "../../components/InputFilter";
+import InputPesquisa from "../../components/InputPesquisa";
 import CriarTask from "../../components/CriarTask";
 import Task from "../../components/Task";
 import { useTaskContext } from "../../context/createContext";
 import CriarSubTask from "../../components/CriarSubTask";
 
-const HeaderCabecalho = styled.header`
-    
-`
 const MainContainer = styled.main`
     
 `
@@ -35,16 +31,10 @@ const Inicio: React.FC = () => {
     }, [])
 
     return (
-        <>
-
-            <HeaderCabecalho>
-                <Cabecalho />
-            </HeaderCabecalho>
-
             <MainContainer>
 
                 <DivTaskCreateFilter>
-                    <InputFilter />
+                    <InputPesquisa />
                     <CriarTask />
                 </DivTaskCreateFilter>
 
@@ -54,7 +44,6 @@ const Inicio: React.FC = () => {
                 </SectionTasks>
 
             </MainContainer>
-        </>
     )
 }
 

@@ -22,14 +22,14 @@ const DivContainer = styled.div`
     transform: translate(-50%, -50%);
     width: 25em;
     height: 6.5em;
-    background-color: #f1dd67;
+    background-color: #77a593;
     border-radius: 0.4em;
     border: 1px solid black;
     z-index: 99;
 
     h2{
         font-size: 2em;
-        color: #2b1300;
+        color: #000000;
     }
 
     input{
@@ -45,6 +45,7 @@ const DivContainer = styled.div`
     button{
         width: 5em;
         height: 1.9em;
+        margin-bottom: 0.3em;
     }
 `
 const DivBackground = styled.div`
@@ -69,11 +70,18 @@ const CriarTask: React.FC = () => {
                 <>
                     <DivContainer>
                         <h2>Coloque o titulo</h2>
-                        <input type="text" value={inputTask} onChange={(e) => setInputTask(e.target.value)} />
+                        <input 
+                        type="text" 
+                        value={inputTask} 
+                        onChange={(e) => setInputTask(e.target.value)} 
+                        onKeyDown={(e) => {
+                            if(e.key === "Enter"){
+                                AdicionarTask({ id: Date.now(), titulo: inputTask, subTasks: [] })}
+                        }}/>
                         <button onClick={() => AdicionarTask({ id: Date.now(), titulo: inputTask, subTasks: [] })}>Criar</button>
                     </DivContainer>
 
-                    <DivBackground />
+                    <DivBackground onClick={() => setPainelTask(!painelTask)}/>
                 </>
             }
 

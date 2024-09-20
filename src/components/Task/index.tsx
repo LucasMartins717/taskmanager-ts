@@ -21,7 +21,6 @@ const DivEstilo = styled.div`
         border: 1px solid #000000;
     }
 `
-
 const DivTask = styled.div`
     display: flex;
     justify-content: space-between;
@@ -41,13 +40,16 @@ const DivTask = styled.div`
         cursor: pointer;
     }
 
+    .buttonTask:last-child{
+        padding-bottom: 2px;
+    }
+
     .botoesTask{
         display: flex;
         align-items: center;
         gap: 0.2em;
     }
 `
-
 const DivSubTask = styled.div`
     width: 100%;
     margin: 0;
@@ -102,9 +104,9 @@ const Task: React.FC = () => {
                         <p key={subTask.id}
                             onClick={() => AlterarCorSubTask(task.id, subTask.id)}
                             style={{
-                                backgroundColor: subTask.corSubTask == 1 ? "#f6ffb2" :
-                                    subTask.corSubTask == 2 ? "#ffb2b2" :
-                                        "#b2ffb2"
+                                backgroundColor: subTask.corSubTask == 1 ? "#D98282" :
+                                    subTask.corSubTask == 2 ? "#FFD580" :
+                                        "#66FF99"
                             }}>{subTask.titulo}
                             <button onClick={(e) => e.stopPropagation()}
                                 onDoubleClick={() => DeletarSubTask(task.id, subTask.id)}

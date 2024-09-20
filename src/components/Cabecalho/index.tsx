@@ -1,20 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const DivEstilo = styled.div`
+const HeaderEstilo = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    background-color: #ffdb3d;
+    background-color: #77a593;
     border-bottom: 1px solid black;
+
+    h1{
+        margin-bottom: 0.1em;
+    }
 `
 
 const Cabecalho: React.FC = () => {
     return (
-        <DivEstilo>
-            <h1>KernList</h1>
-        </DivEstilo>
+        <HeaderEstilo>
+            <h1>TaskManager</h1>
+        </HeaderEstilo>
     )
 }
 
