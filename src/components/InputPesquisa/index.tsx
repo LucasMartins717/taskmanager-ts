@@ -17,7 +17,7 @@ const InputPesquisa: React.FC = () => {
 
     return(
         <DivEstilo>
-            <input type="text" value={inputPesquisa} onChange={(e) => {setInputPesquisa(e.target.value)}} placeholder="Pesquisa:"/>
+            <input type="text" value={inputPesquisa} onChange={(e) => {setInputPesquisa(e.target.value)}} placeholder="Pesquisar:"/>
         </DivEstilo>        
     )
 }

@@ -9,6 +9,7 @@ const DivEstilo = styled.div`
         border: 1px solid black;
         border-radius: 4em;
         font-size: 2em;
+        cursor: pointer;
     }
 `
 const DivContainer = styled.div`
